@@ -55,7 +55,7 @@ function flashRainbowColors(callback) {
     }, 200);
     setTimeout(function () {
         clearInterval(interval);
-        document.body.style.backgroundColor = '';
+        document.body.style.backgroundColor = '#FADADD'; // Reset background to pink
         if (callback) {
             callback();
         }
@@ -83,15 +83,14 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    document.getElementById('image-container').innerHTML = '';
-    var imageContainer = document.getElementById('image-container');
-    var catHeartImage = new Image();
+    document.getElementById('image-container').innerHTML = ''; // Clear the container first
+    const imageContainer = document.getElementById('image-container');
+    const catHeartImage = new Image();
     catHeartImage.src = 'cat-heart.gif';
     catHeartImage.alt = 'Cat Heart';
-    catHeartImage.onload = function () {
-        imageContainer.appendChild(catHeartImage);
-        document.getElementById('options').style.display = 'none';
-    };
+    catHeartImage.id = 'cat-heart'; // Add an ID for styling
+    imageContainer.appendChild(catHeartImage);
+    document.getElementById('options').style.display = 'none'; // Hide the buttons
 }
 
 // Easter egg: Dancing panda on click
