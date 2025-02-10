@@ -52,9 +52,10 @@ button:active {
 
 #valentine-message {
     font-family: 'Sacramento', cursive;
-    font-size: 48px; /* Increased font size */
-    font-weight: bold; /* Makes the text bold */
+    font-size: 36px; /* Increased font size */
+    font-weight: normal; /* Sacramento doesn't support bold */
     color: #FB607F;
+    text-shadow: 2px 2px 4px #FF69B4; /* Add shadow for bold effect */
     margin-top: 100px; /* Adjusted for iPhone 12 */
     position: absolute;
     top: 15%; /* Higher position for visibility */
