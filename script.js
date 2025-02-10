@@ -6,6 +6,7 @@ function selectOption(option) {
         launchConfetti(); // Launch confetti
         flashRainbowColors(function () {
             document.getElementById('question').style.display = 'none'; // Hide the question
+            addWallPicture(); // Add the "picture on the wall"
             displayCatHeart(); // Display the cat-heart.gif
             spawnHeartExplosion(); // Heart explosion
             displayMessage(); // Show personalized message
@@ -55,11 +56,21 @@ function flashRainbowColors(callback) {
     }, 200);
     setTimeout(function () {
         clearInterval(interval);
-        document.body.style.backgroundColor = '';
+        document.body.style.backgroundColor = '#FADADD'; // Turn the background pink
         if (callback) {
             callback();
         }
     }, 2000);
+}
+
+// Function to add a "picture on the wall" behind the cat-heart.gif
+function addWallPicture() {
+    const imageContainer = document.getElementById('image-container');
+    const wallPicture = new Image();
+    wallPicture.src = 'bgphoto.png'; // Your 20x20 pixel picture
+    wallPicture.alt = 'Wall Picture';
+    wallPicture.id = 'wall-picture'; // Assign an ID for styling
+    imageContainer.appendChild(wallPicture); // Add it behind the cat-heart.gif
 }
 
 // Function to display a personalized message
@@ -83,38 +94,14 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    document.getElementById('image-container').innerHTML = '';
-    var imageContainer = document.getElementById('image-container');
-    var catHeartImage = new Image();
+    document.getElementById('image-container').innerHTML = ''; // Clear the container first
+    const imageContainer = document.getElementById('image-container');
+    const catHeartImage = new Image();
     catHeartImage.src = 'cat-heart.gif';
     catHeartImage.alt = 'Cat Heart';
-    catHeartImage.onload = function () {
-        imageContainer.appendChild(catHeartImage);
-        document.getElementById('options').style.display = 'none';
-    };
-}
-
-// Easter egg: Dancing panda on click
-document.body.addEventListener('click', function (e) {
-    const panda = document.createElement('img');
-    panda.src = 'dancing-panda.gif'; // Replace with your panda gif
-    panda.className = 'panda';
-    panda.style.left = e.pageX + 'px';
-    panda.style.top = e.pageY + 'px';
-    document.body.appendChild(panda);
-    setTimeout(() => panda.remove(), 3000); // Remove after 3 seconds
-});
-
-// Heart explosion on button click
-function spawnHeartExplosion() {
-    for (let i = 0; i < 20; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'explosion-heart';
-        heart.style.left = `${Math.random() * window.innerWidth}px`;
-        heart.style.top = `${Math.random() * window.innerHeight}px`;
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1500); // Remove after animation
-    }
+    catHeartImage.id = 'cat-heart'; // Add an ID for styling
+    imageContainer.appendChild(catHeartImage);
+    document.getElementById('options').style.display = 'none'; // Hide the buttons
 }
 
 // Display the cat.gif initially
