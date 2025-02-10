@@ -15,28 +15,9 @@ body {
     box-sizing: border-box;
 }
 
-#image-container {
-    position: relative; /* Allows proper positioning of child elements */
-}
-
 #image-container img {
     max-width: 100%;
     height: auto;
-}
-
-#wall-picture {
-    position: absolute;
-    width: 40px; /* Size of the "wall picture" */
-    height: 40px;
-    top: -20px; /* Adjust position relative to the container */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1; /* Ensure it's behind the cat-heart.gif */
-}
-
-#cat-heart {
-    position: relative;
-    z-index: 2; /* Ensure it's above the wall picture */
 }
 
 #question {
