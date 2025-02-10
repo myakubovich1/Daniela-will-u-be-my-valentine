@@ -1,40 +1,63 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
-    text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
 }
 
 #container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 10px; /* Add padding for smaller screens */
+    box-sizing: border-box;
 }
 
-#image-container {
-    /* This container will hold the images */
+#image-container img {
+    max-width: 100%;
+    height: auto;
 }
 
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
+    font-family: 'Sacramento', cursive;
+    font-size: 8vw; /* Adjust font size based on screen width */
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 #options {
-    margin-top: 20px; /* Add space above the options */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+    justify-content: center; /* Center buttons */
 }
 
 button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    padding: 10px 20px;
+    margin: 10px; /* Adjust margin for small screens */
+    font-size: 6vw; /* Adjust font size based on screen width */
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95); /* Add a press effect */
+}
+
+@media (max-width: 600px) {
+    #question {
+        font-size: 10vw;
+    }
+
+    button {
+        font-size: 7vw;
+    }
 }
