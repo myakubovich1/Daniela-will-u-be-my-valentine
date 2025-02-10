@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 10px; /* Add padding for smaller screens */
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -22,7 +22,7 @@ body {
 
 #question {
     font-family: 'Sacramento', cursive;
-    font-size: 8vw; /* Adjust font size based on screen width */
+    font-size: 8vw;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
@@ -30,32 +30,39 @@ body {
 #options {
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap if necessary */
-    justify-content: center; /* Center buttons */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 button {
     padding: 10px 20px;
-    margin: 10px; /* Adjust margin for small screens */
-    font-size: 6vw; /* Adjust font size based on screen width */
+    margin: 10px;
+    font-size: 6vw;
     font-family: 'Sacramento', cursive;
     background-color: #FB607F;
     color: white;
     border: none;
-    border-radius: 5px; /* Rounded corners for buttons */
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:active {
-    transform: scale(0.95); /* Add a press effect */
+    transform: scale(0.95);
 }
 
-@media (max-width: 600px) {
-    #question {
-        font-size: 10vw;
-    }
+#valentine-message {
+    font-family: 'Sacramento', cursive;
+    font-size: 24px;
+    color: #FB607F;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-    button {
-        font-size: 7vw;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
