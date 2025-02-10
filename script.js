@@ -23,10 +23,12 @@ function selectOption(option) {
 // Function to play the background music
 function playMusic() {
     var music = document.getElementById('background-music');
-    music.play();
+    music.play().catch(function(error) {
+        console.error("Music playback blocked by browser:", error);
+    });
 }
 
-// Flash rainbow colors function remains the same
+// Flash rainbow colors function
 function flashRainbowColors(callback) {
     var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
