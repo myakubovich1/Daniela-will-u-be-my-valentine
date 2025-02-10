@@ -52,7 +52,7 @@ button:active {
 
 #valentine-message {
     font-family: 'Sacramento', cursive;
-    font-size: 36px; /* Increased font size */
+    font-size: 48px; /* Increased font size */
     font-weight: bold; /* Makes the text bold */
     color: #FB607F;
     margin-top: 100px; /* Adjusted for iPhone 12 */
