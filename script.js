@@ -65,7 +65,7 @@ function flashRainbowColors(callback) {
 function displayMessage() {
     var message = document.createElement('div');
     message.id = 'valentine-message';
-    message.innerHTML = 'Даниэла, я тебя люблю! 💖';
+    message.innerHTML = '👁️💖🫵';
     document.body.appendChild(message);
 }
 
